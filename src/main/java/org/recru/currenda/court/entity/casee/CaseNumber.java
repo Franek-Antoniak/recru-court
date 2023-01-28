@@ -1,4 +1,14 @@
 package org.recru.currenda.court.entity.casee;
 
-public record CaseNumber(Integer number, Integer year) {
+
+import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Embeddable
+class CaseNumber {
+	private Integer number;
+	private Integer year;
 }
