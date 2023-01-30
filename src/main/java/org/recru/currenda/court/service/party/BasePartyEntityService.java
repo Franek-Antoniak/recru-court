@@ -1,7 +1,9 @@
 package org.recru.currenda.court.service.party;
 
 import lombok.RequiredArgsConstructor;
+import org.recru.currenda.court.dto.casee.CaseStateRequest;
 import org.recru.currenda.court.dto.party.PartyAddressResponse;
+import org.recru.currenda.court.entity.casee.CaseState;
 import org.recru.currenda.court.entity.party.PartyAddress;
 import org.recru.currenda.court.entity.party.PartyEntity;
 import org.recru.currenda.court.mapper.party.PartyAddressMapper;
@@ -20,8 +22,10 @@ class BasePartyEntityService implements PartyEntityService {
 	private final PartyAddressMapper partyAddressMapper;
 
 	@Override
-	public List<PartyAddressResponse> getPartiesAddressesWithCasesByActive(boolean active) {
-		List<PartyEntity> parties = partyEntityRepository.findAllByActive(active);
+	public List<PartyAddressResponse> getPartiesAddressesWithCasesByActive(CaseStateRequest caseState,
+			boolean active) {
+		List<PartyEntity> parties = partyEntityRepository.findAllByActiveAndCaseEntityCaseState(active,
+				CaseState.valueOf(caseState.name()));
 		Set<PartyAddress> partyAddresses = parties.stream()
 				.map(PartyEntity::getAddress)
 				.collect(toSet());
