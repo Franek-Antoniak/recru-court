@@ -12,8 +12,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CaseNumber {
-	@Column(name = "case_number_number")
-	private Integer number;
-	@Column(name = "case_number_year")
-	private Integer year;
+	@Column(name = "case_number_number") private Integer number;
+	@Column(name = "case_number_year") private Integer year;
 }

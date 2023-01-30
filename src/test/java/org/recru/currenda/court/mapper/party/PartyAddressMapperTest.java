@@ -15,12 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class PartyAddressMapperTest {
-	@Mock
-	private StreetMapper streetMapper;
-	@Mock
-	private PostalCodeMapper postalCodeMapper;
-	@InjectMocks
-	private PartyAddressMapper partyAddressMapper = Mappers.getMapper(PartyAddressMapper.class);
+	@Mock private StreetMapper streetMapper;
+	@Mock private PostalCodeMapper postalCodeMapper;
+	@InjectMocks private PartyAddressMapper partyAddressMapper = Mappers.getMapper(PartyAddressMapper.class);
 
 	@Test
 	void toResponse() {

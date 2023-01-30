@@ -19,36 +19,27 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 public abstract class BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id;
 
 	@Column(
 			name = "uuid",
 			unique = true,
 			nullable = false,
 			updatable = false
-	)
-	@NaturalId
-	private UUID uuid;
+	) @NaturalId private UUID uuid;
 
-	@Version
-	private Long version;
+	@Version private Long version;
 
 	@Column(
 			name = "created_date",
 			nullable = false,
 			updatable = false
-	)
-	@CreationTimestamp
-	private LocalDateTime createdDate;
+	) @CreationTimestamp private LocalDateTime createdDate;
 
 	@Column(
 			name = "last_modified_date",
 			nullable = false
-	)
-	@UpdateTimestamp
-	private LocalDateTime lastModifiedDate;
+	) @UpdateTimestamp private LocalDateTime lastModifiedDate;
 
 	@Override
 	public int hashCode() {

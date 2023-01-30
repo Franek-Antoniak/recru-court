@@ -15,13 +15,10 @@ import org.recru.currenda.court.entity.casee.CaseEntity;
 @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class PartyEntity extends BaseEntity {
-	@ManyToOne(optional = false)
-	private CaseEntity caseEntity;
-	@Enumerated(EnumType.STRING)
-	private PartyType partyType;
-	@Embedded
-	private PartyName name;
+	@ManyToOne(optional = false) private CaseEntity caseEntity;
+	@Enumerated(EnumType.STRING) private PartyType partyType;
+	@Embedded private PartyName name;
 	private boolean active;
-	@ManyToOne(optional = false)
+	@Embedded
 	private PartyAddress address;
 }

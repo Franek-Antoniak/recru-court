@@ -19,10 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class CaseMapperTest {
-	@Mock
-	private CaseNumberMapper caseNumberMapper;
-	@InjectMocks
-	private CaseMapper caseMapper = Mappers.getMapper(CaseMapper.class);
+	@Mock private CaseNumberMapper caseNumberMapper;
+	@InjectMocks private CaseMapper caseMapper = Mappers.getMapper(CaseMapper.class);
 
 	@Test
 	void toResponse() {

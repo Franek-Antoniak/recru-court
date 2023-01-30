@@ -2,8 +2,8 @@ package org.recru.currenda.court.facade.casee;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.lang.annotation.Before;
 import org.recru.currenda.court.dto.casee.CaseResponse;
+import org.recru.currenda.court.service.casee.CaseEntityService;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
@@ -14,7 +14,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Validated
 public class CaseFacade {
+	private final CaseEntityService caseEntityService;
+
 	public Map<String, CaseResponse> getGroupedCasesByCaseType(@NotNull LocalDate from, @NotNull LocalDate to) {
-		return null;
+		return caseEntityService.getGroupedCasesByCaseType(from, to);
 	}
 }
