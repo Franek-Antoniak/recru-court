@@ -19,6 +19,5 @@ public class PartyEntity extends BaseEntity {
 	@Enumerated(EnumType.STRING) private PartyType partyType;
 	@Embedded private PartyName name;
 	private boolean active;
-	@Embedded
-	private PartyAddress address;
+	@Embedded private PartyAddress address;
 }
