@@ -1,4 +1,4 @@
-package org.recru.currenda.court.repository;
+package org.recru.currenda.court.repository.casee;
 
 import org.recru.currenda.court.entity.casee.CaseEntity;
 import org.springframework.context.annotation.Profile;
