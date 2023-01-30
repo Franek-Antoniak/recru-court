@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.toSet;
 
 @Service
 @RequiredArgsConstructor
-public class BasePartyEntityService implements PartyEntityService {
+class BasePartyEntityService implements PartyEntityService {
 	private final PartyEntityRepository partyEntityRepository;
 	private final PartyAddressMapper partyAddressMapper;
 
