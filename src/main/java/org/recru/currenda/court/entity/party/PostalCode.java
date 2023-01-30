@@ -10,6 +10,6 @@ import lombok.*;
 @AllArgsConstructor
 @Embeddable
 public class PostalCode {
-	private String firstPart;
-	private String secondPart;
+	private String first_part_postal_code;
+	private String second_part_postal_code;
 }

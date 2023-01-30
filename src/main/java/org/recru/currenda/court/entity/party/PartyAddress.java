@@ -15,5 +15,5 @@ import lombok.*;
 public class PartyAddress {
 	private String city;
 	@Enumerated(EnumType.STRING) private PostalCode postalCode;
-	@Embedded private Street street;
+	private String street;
 }

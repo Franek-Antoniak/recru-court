@@ -11,12 +11,12 @@ public interface PostalCodeMapper {
 	@Mappings(
 			{
 					@Mapping(
-							target = "firstPart",
-							source = "postalCode.firstPart"
+							target = "first_part_postal_code",
+							source = "postalCode.first_part_postal_code"
 					),
 					@Mapping(
-							target = "secondPart",
-							source = "postalCode.secondPart"
+							target = "second_part_postal_code",
+							source = "postalCode.second_part_postal_code"
 					)
 			}
 	)

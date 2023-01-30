@@ -10,7 +10,6 @@ import org.recru.currenda.court.entity.party.PartyAddress;
 @Mapper(
 		componentModel = "spring",
 		uses = {
-				StreetMapper.class,
 				PostalCodeMapper.class
 		}
 )

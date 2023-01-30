@@ -20,7 +20,7 @@ class PostalCodeMapperTest {
 		// when
 		PostalCodeResponse response = postalCodeMapper.toResponse(postalCode);
 		// then
-		assertEquals(postalCode.getFirstPart(), response.getFirstPart());
-		assertEquals(postalCode.getSecondPart(), response.getSecondPart());
+		assertEquals(postalCode.getFirst_part_postal_code(), response.getFirst_part_postal_code());
+		assertEquals(postalCode.getSecond_part_postal_code(), response.getSecond_part_postal_code());
 	}
 }

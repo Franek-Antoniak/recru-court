@@ -5,6 +5,8 @@ import lombok.*;
 import org.recru.currenda.court.entity.base.BaseEntity;
 import org.recru.currenda.court.entity.casee.CaseEntity;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -19,5 +21,5 @@ public class PartyEntity extends BaseEntity {
 	@Enumerated(EnumType.STRING) private PartyType partyType;
 	@Embedded private PartyName name;
 	private boolean active;
-	@Embedded private PartyAddress address;
+	@ElementCollection private List<PartyAddress> addresses;
 }

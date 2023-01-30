@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class PartyAddressResponse {
-	private StreetResponse street;
+	private String street;
 	private String city;
 	private PostalCodeResponse postalCode;
 }

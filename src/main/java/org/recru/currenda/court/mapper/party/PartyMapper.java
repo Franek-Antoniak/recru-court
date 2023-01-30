@@ -29,8 +29,8 @@ public interface PartyMapper {
 							source = "partyEntity.name"
 					),
 					@Mapping(
-							target = "address",
-							source = "partyEntity.address"
+							target = "addresses",
+							source = "partyEntity.addresses"
 					),
 					@Mapping(
 							target = "active",

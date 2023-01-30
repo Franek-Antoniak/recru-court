@@ -9,6 +9,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.recru.currenda.court.dto.party.PartyResponse;
 import org.recru.currenda.court.entity.party.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
@@ -23,10 +25,9 @@ class PartyMapperTest {
 		PartyType partyType = PartyType.PLAINTIFF;
 		PartyName name = new PartyName("John", "Doe");
 		boolean active = true;
-		Street street = new Street("streetName", "streetNumber");
 		PostalCode postalCode = new PostalCode("22-100", "Lublin");
-		PartyAddress partyAddress = new PartyAddress("Warsaw", postalCode, street);
-		PartyEntity partyEntity = new PartyEntity(null, partyType, name, active, partyAddress);
+		PartyAddress partyAddress = new PartyAddress("Warsaw", postalCode, "streetName");
+		PartyEntity partyEntity = new PartyEntity(null, partyType, name, active, List.of(partyAddress));
 		// when
 		PartyResponse partyResponse = partyMapper.toResponse(partyEntity);
 		// then
@@ -34,6 +35,9 @@ class PartyMapperTest {
 				.name());
 		assertEquals(partyResponse.getName(), partyNameMapper.toResponse(partyEntity.getName()));
 		assertEquals(partyResponse.isActive(), partyEntity.isActive());
-		assertEquals(partyResponse.getAddress(), partyAddressMapper.toResponse(partyEntity.getAddress()));
+		for (int i = 0; i < partyResponse.getAddresses().size(); i++) {
+			assertEquals(partyResponse.getAddresses().get(i), partyAddressMapper.toResponse(partyEntity.getAddresses()
+					.get(i)));
+		}
 	}
 }

@@ -27,7 +27,8 @@ class BasePartyEntityService implements PartyEntityService {
 		List<PartyEntity> parties = partyEntityRepository.findAllByActiveAndCaseEntityCaseState(active,
 				CaseState.valueOf(caseState.name()));
 		Set<PartyAddress> partyAddresses = parties.stream()
-				.map(PartyEntity::getAddress)
+				.map(PartyEntity::getAddresses)
+				.flatMap(List::stream)
 				.collect(toSet());
 		return partyAddresses.stream()
 				.map(partyAddressMapper::toResponse)
