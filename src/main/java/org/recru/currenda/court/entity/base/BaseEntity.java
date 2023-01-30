@@ -15,7 +15,6 @@ import java.util.Objects;
 import java.util.UUID;
 
 @SuperBuilder
-@Entity
 @MappedSuperclass
 @NoArgsConstructor
 @Getter

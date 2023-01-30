@@ -4,7 +4,11 @@ import lombok.Data;
 
 @Data
 public class PostalCodeResponse {
-	private String postalCode;
-	private String city;
-	private String country;
+	private String firstPart;
+	private String secondPart;
+
+	@Override
+	public String toString() {
+		return firstPart + "-" + secondPart;
+	}
 }

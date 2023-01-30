@@ -2,9 +2,7 @@ package org.recru.currenda.court.entity.casee;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.recru.currenda.court.entity.base.BaseEntity;
 
 import java.time.LocalDate;
@@ -13,6 +11,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class CaseEntity extends BaseEntity {
 	@Embedded
