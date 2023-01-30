@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -15,7 +16,7 @@ public class CaseController {
 	private final CaseFacade caseFacade;
 
 	@GetMapping("/case-types/cases")
-	public Map<String, CaseResponse> casesGrouped(LocalDate from, LocalDate to) {
+	public Map<String, List<CaseResponse>> casesGrouped(LocalDate from, LocalDate to) {
 		return caseFacade.getGroupedCasesByCaseType(from, to);
 	}
 }

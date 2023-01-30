@@ -35,8 +35,10 @@ class PartyMapperTest {
 				.name());
 		assertEquals(partyResponse.getName(), partyNameMapper.toResponse(partyEntity.getName()));
 		assertEquals(partyResponse.isActive(), partyEntity.isActive());
-		for (int i = 0; i < partyResponse.getAddresses().size(); i++) {
-			assertEquals(partyResponse.getAddresses().get(i), partyAddressMapper.toResponse(partyEntity.getAddresses()
+		for (int i = 0; i < partyResponse.getAddresses()
+				.size(); i++) {
+			assertEquals(partyResponse.getAddresses()
+					.get(i), partyAddressMapper.toResponse(partyEntity.getAddresses()
 					.get(i)));
 		}
 	}
